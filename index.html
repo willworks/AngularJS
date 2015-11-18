@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="res/css/bootstrap.min.css">
+	</head>
+	<body>
+		<div ng-app='ap' ng-controller="ctr">
+			<input type="text" ng-model="name">
+			<p ng-bind="name"></p>
+			<input type="text" ng-model="age">
+			<p ng-bind="age"></p>
+			<p>{{ name + " " + age }}</p>
+		</div>
+		<script src="res/js/angular.min.js"></script>
+		<script src="res/js/app.js"></script>
+	</body>
+</html>
