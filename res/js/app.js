@@ -7,8 +7,8 @@ app.controller('parent', function($scope) {
 	$scope.person = 'zhong';
 });
 app.controller('children', function($scope) {
-	$scope.sayHello = function($scope) {
-		$scope.person = 'hanjin';
+	$scope.sayHello = function() {
+		$scope.person = 'kevin.zhong';
 	};
 });
 app.controller('cal', function($scope) {
@@ -18,5 +18,18 @@ app.controller('cal', function($scope) {
 	};
 	$scope.sub = function(){
 		$scope.num--;
+	};
+});
+app.controller('req', function($scope, $http) {
+	$scope.demo = 'empty';
+	$scope.req = function(){
+		$http({
+			method: 'jsonp',
+			url: 'http://mst.vip.com/Special/getUserType',
+		}).success(function(data, status, headers, config){
+			$scope.demo = 'success';
+		}).error(function(data, status, headers, config){
+			$scope.demo = 'error';
+		});
 	};
 });
