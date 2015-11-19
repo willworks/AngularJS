@@ -25,7 +25,7 @@ app.controller('req', function($scope, $http) {
 	$scope.req = function(){
 		$http({
 			method: 'jsonp',
-			url: 'http://mst.vip.com/Special/getUserType',
+			url: '',
 		}).success(function(data, status, headers, config){
 			$scope.demo = 'success';
 		}).error(function(data, status, headers, config){
