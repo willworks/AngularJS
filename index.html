@@ -3,13 +3,21 @@
 	<head>
 		<link rel="stylesheet" href="res/css/bootstrap.min.css">
 	</head>
-	<body>
-		<div ng-app='ap' ng-controller="ctr">
+	<body ng-app='myApp'>
+		<div ng-controller='myCtrl'>
 			<input type="text" ng-model="name">
 			<p ng-bind="name"></p>
 			<input type="text" ng-model="age">
 			<p ng-bind="age"></p>
 			<p>{{ name + " " + age }}</p>
+		</div>
+
+		<div ng-controller='parent'>
+			<div ng-controller='children'>
+				<input type="text" ng-model='person' placeholder='name'>
+				<a ng-click='sayHello()'>sayHello</a>
+				<p>{{ person }}</p>
+			</div>
 		</div>
 		<script src="res/js/angular.min.js"></script>
 		<script src="res/js/app.js"></script>
