@@ -33,3 +33,10 @@ app.controller('req', function($scope, $http) {
 		});
 	};
 });
+app.directive('hello', function() {
+    return {
+        restrict: 'E',
+        template: '<div>Hello, this is directive.</div>',
+        replace: true
+    };
+});
